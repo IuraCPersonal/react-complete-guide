@@ -40,18 +40,18 @@ const Login = (props) => {
   });
 
   const [formIsValid, setFormIsValid] = useState(false);
-  
+
 
   const emailChangeHandler = (event) => {
-    dispatchEmail({type: 'USER_INPUT', val: event.target.value});
-    
+    dispatchEmail({ type: 'USER_INPUT', val: event.target.value });
+
     setFormIsValid(
       event.target.value.includes('@') && passwordState.value.trim().length > 6
     );
   };
 
   const passwordChangeHandler = (event) => {
-    dispatchPassword({type: 'USER_INPUT', val: event.target.value})
+    dispatchPassword({ type: 'USER_INPUT', val: event.target.value })
 
     setFormIsValid(
       emailState.value.includes('@') && event.target.value.trim().length > 6
@@ -75,9 +75,8 @@ const Login = (props) => {
     <Card className={classes.login}>
       <form onSubmit={submitHandler}>
         <div
-          className={`${classes.control} ${
-            emailState.isValid === false ? classes.invalid : ''
-          }`}
+          className={`${classes.control} ${emailState.isValid === false ? classes.invalid : ''
+            }`}
         >
           <label htmlFor="email">E-Mail</label>
           <input
@@ -89,9 +88,8 @@ const Login = (props) => {
           />
         </div>
         <div
-          className={`${classes.control} ${
-            passwordState.isValid === false ? classes.invalid : ''
-          }`}
+          className={`${classes.control} ${passwordState.isValid === false ? classes.invalid : ''
+            }`}
         >
           <label htmlFor="password">Password</label>
           <input
